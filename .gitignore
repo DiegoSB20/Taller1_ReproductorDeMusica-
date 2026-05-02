@@ -1,0 +1,9 @@
+# Configuracion del editor CLion
+.idea/
+
+# Archivos compilados de CMake
+cmake-build-debug/
+cmake-build-release/
+
+# (Opcional) Si no quieres subir los archivos de estado guardado en tus pruebas
+# status.cfg

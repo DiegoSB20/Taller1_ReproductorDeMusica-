@@ -1,35 +1,20 @@
 cmake_minimum_required(VERSION 3.20)
 project(ReproductorMusica)
 
-# Fijar el estándar de C++ requerido por el taller
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 14)
 
-# 1. Le decimos al compilador dónde buscar los archivos de cabecera (.h)
-include_directories(data_structures classes core)
+# Forma segura de buscar TODAS las subcarpetas automáticamente
+# para que encuentre Nodo.h, Cancion.h, etc.
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-# 2. Recopilamos todos los archivos fuente (.cpp y .h) automáticamente
-# Usamos GLOB_RECURSE para que si agregas un archivo nuevo, CMake lo detecte solo.
+# Recolectamos absolutamente todos los archivos .cpp del proyecto
 file(GLOB_RECURSE SOURCES
-        "data_structures/*.cpp"
-        "data_structures/*.h"
-        "classes/*.cpp"
-        "classes/*.h"
-        "core/*.cpp"
-        "core/*.h"
-        "main.cpp"
+        "*.cpp"
+        "*.h"
 )
 
-# 3. Construimos el ejecutable final con todos los archivos encontrados
-add_executable(ReproductorMusica ${SOURCES}
-        estructura_data/ListaDoble.cpp
-        estructura_data/ListaDoble.h
-        Clases/Cancion.cpp
-        Clases/Cancion.h
-        Clases/EstadoReproductor.cpp
-        Clases/EstadoReproductor.h
-        Core/GestorArchivos.cpp
-        Core/GestorArchivos.h
-        Core/InterfazConsola.cpp
-        Core/InterfazConsola.h
-        Core/ControladorApp.cpp
-        Core/ControladorApp.h)
+# Filtramos para asegurarnos de que no intente compilar basura temporal
+list(FILTER SOURCES EXCLUDE REGEX "cmake-build-.*")
+list(FILTER SOURCES EXCLUDE REGEX ".idea/.*")
+
+add_executable(ReproductorMusica ${SOURCES})

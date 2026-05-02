@@ -1,0 +1,7 @@
+1,Bring me to life,Evanescence,Fallen,2003,237,C:/musica/bring_me_to_life.mp3
+2,PON PON PON,Kyary Pamyu Pamyu,Moshi Moshi Harajuku,2011,242,C:/musica/ponponpon.mp3
+3,Starboy,The Weeknd,Starboy,2016,230,C:/musica/starboy.mp3
+4,I Was Made for Lovin' You,KISS,Dynasty,1979,271,C:/musica/kiss.mp3
+5,Fire Dance,Vivid BAD Squad,Single,2025,185,C:/musica/fire_dance.mp3
+6,World is Mine,Ryo feat. Hatsune Miku,Supercell,2008,255,C:/musica/world_is_mine.mp3
+7,Titanium,David Guetta,Nothing but the Beat,2011,245,C:/musica/titanium.mp3

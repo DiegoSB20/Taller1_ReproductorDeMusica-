@@ -86,3 +86,33 @@ void ListaDoble::mezclarLista() {
         nodoJ->setDato(temp);
     }
 }
+
+bool ListaDoble::eliminarPorId(int id) {
+    if (estaVacia()) return false;
+
+    Nodo* actual = cabeza;
+
+    while (actual != nullptr) {
+        if (actual->getDato()->getId() == id) {
+            // Desenlazar el nodo
+            if (actual == cabeza) {
+                cabeza = actual->getSiguiente();
+                if (cabeza) cabeza->setAnterior(nullptr);
+                else cola = nullptr;
+            } else if (actual == cola) {
+                cola = actual->getAnterior();
+                cola->setSiguiente(nullptr);
+            } else {
+                actual->getAnterior()->setSiguiente(actual->getSiguiente());
+                actual->getSiguiente()->setAnterior(actual->getAnterior());
+            }
+
+            delete actual->getDato(); // Liberar la Cancion de la memoria RAM
+            delete actual;            // Liberar el Nodo
+            tamano--;
+            return true;
+        }
+        actual = actual->getSiguiente();
+    }
+    return false;
+}

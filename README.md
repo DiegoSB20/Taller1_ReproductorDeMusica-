@@ -1,13 +1,13 @@
- [Reproductor de musica UCN]
+ ###[Reproductor de musica UCN]
 Integrantes: Diego Seco y David Rodriguez
 
-📝 Descripción del Proyecto
+###📝 Descripción del Proyecto
 Este proyecto es un reproductor de medios basado en consola desarrollado en C++ estándar. Implementa la gestión de inventario y colas de reproducción mediante la construcción desde cero de Listas Doblemente Enlazadas, evitando el uso de librerías de contenedores STL. El sistema cuenta con persistencia de estado mediante archivos de configuración locales, permitiendo retomar la reproducción, gestionar modos aleatorios, modos de repetición y moverse dinámicamente entre pistas musicales directamente en la terminal.
 
-Instrucciones de uso
+###Instrucciones de uso
 Este proyecto utiliza CMake como sistema de construcción de software para garantizar la compatibilidad multiplataforma y la correcta vinculación de sus múltiples directorios y archivos de cabecera.
 
-Requisitos previos:
+###Requisitos previos:
 
 Compilador compatible con C++14 (MinGW, GCC, Clang).
 
@@ -36,6 +36,8 @@ Los submenús permiten interactuar directamente con la lista actual [A] (para sa
 Todo cambio en el estado o navegación generará automáticamente una sobreescritura sobre el archivo status.cfg para evitar pérdida de progreso. El cierre seguro del sistema se realiza únicamente con la opción [X].
 
 🏗️ Diagrama de Clases
+
+
 classDiagram
     class Nodo {
         -Cancion* dato
@@ -82,5 +84,4 @@ classDiagram
     ControladorApp "1" *-- "2" ListaDoble : administra
     ControladorApp "1" *-- "1" GestorArchivos : usa
     ControladorApp "1" *-- "1" InterfazConsola : usa
-    ControladorApp "1" *-- "1" EstadoReproductor : gestiona# Taller1_ReproductorDeMusica-
-
+    ControladorApp "1" *-- "1" EstadoReproductor : gestiona#

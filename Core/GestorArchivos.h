@@ -20,6 +20,7 @@ public:
     // Guarda y carga el estado de la aplicación (para status.cfg)
     bool cargarEstado(EstadoReproductor* estado, ListaDoble* inventario, ListaDoble* reproduccionActual);
     bool guardarEstado(EstadoReproductor* estado, ListaDoble* reproduccionActual);
+    bool guardarInventario(ListaDoble* inventario);
 };
 
 #endif // GESTORARCHIVOS_H

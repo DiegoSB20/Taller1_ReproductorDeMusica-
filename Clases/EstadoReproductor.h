@@ -9,6 +9,9 @@ class EstadoReproductor {
 private:
     ModoReproduccion estadoActual;
     ModoRepeticion repeticionActual;
+    //"Decidimos implementarlo por seguridad de tipos (Type Safety). Si definía el estado como un entero (int), el compilador me habría permitido asignar accidentalmente un estado inválido, 
+    //por ejemplo, estado = 99. Al encapsular los estados en un enum class, 
+    //el compilador revisa por mí que solo se puedan asignar los tres estados válidos (DETENIDA, REPRODUCIENDO, PAUSADA), reduciendo el riesgo de bugs silenciosos durante la ejecución."
 
     //int estadoActual;     // 0 = Detenida, 1 = Reproduciendo, 2 = Pausada
     //int repeticionActual; // 0 = Desactivado, 1 = Repetir Una, 2 = Repetir Todas

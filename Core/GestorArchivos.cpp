@@ -82,3 +82,23 @@ bool GestorArchivos::cargarEstado(EstadoReproductor* estado, ListaDoble* inventa
     archivo.close();
     return true;
 }
+
+bool GestorArchivos::guardarInventario(ListaDoble* inventario) {
+    std::ofstream archivo(rutaCanciones); // Abre y limpia el archivo
+    if (!archivo.is_open()) return false;
+
+    Nodo* actual = inventario->getCabeza();
+    while (actual != nullptr) {
+        Cancion* c = actual->getDato();
+        archivo << c->getId() << "," 
+                << c->getNombre() << "," 
+                << c->getArtista() << "," 
+                << c->getAlbum() << "," 
+                << c->getAnio() << "," 
+                << c->getDuracion() << "," 
+                << c->getRutaArchivo() << "\n";
+        actual = actual->getSiguiente();
+    }
+    archivo.close();
+    return true;
+}

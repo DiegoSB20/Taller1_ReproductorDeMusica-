@@ -38,7 +38,9 @@ Todo cambio en el estado o navegación generará automáticamente una sobreescri
 🏗️ Diagrama de Clases
 
 
-classDiagram
+
+
+    classDiagram
     class Nodo {
         -Cancion* dato
         -Nodo* siguiente
@@ -77,11 +79,13 @@ classDiagram
         -ListaDoble* listaReproduccion
         +iniciar()
         -procesarOpcionPrincipal()
+        
     }
-
+    
     ListaDoble "1" *-- "many" Nodo : contiene
     Nodo "1" o-- "1" Cancion : apunta a
     ControladorApp "1" *-- "2" ListaDoble : administra
     ControladorApp "1" *-- "1" GestorArchivos : usa
     ControladorApp "1" *-- "1" InterfazConsola : usa
-    ControladorApp "1" *-- "1" EstadoReproductor : gestiona#
+    ControladorApp "1" *-- "1" EstadoReproductor : gestiona# Taller1_ReproductorDeMusicjkj-
+

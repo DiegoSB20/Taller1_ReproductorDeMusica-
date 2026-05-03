@@ -28,6 +28,8 @@ public:
 
 
     void mezclarLista(); // Para la opción 'S'
+    bool eliminarPorId(int id);
+
 };
 
 #endif // LISTADOBLE_H

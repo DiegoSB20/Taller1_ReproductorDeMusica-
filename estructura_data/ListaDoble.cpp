@@ -2,6 +2,8 @@
 #include <cstdlib> // Necesario para la generación de números aleatorios si implementas mezclarLista()
 #include <ctime>
 
+#include "Clases/Cancion.h"
+
 ListaDoble::ListaDoble() {
     cabeza = nullptr;
     cola = nullptr;
